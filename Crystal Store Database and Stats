@@ -1,0 +1,21 @@
+CREATE TABLE crystals (ID INTEGER PRIMARY KEY, Name TEXT, Price integer, Intention TEXT, Texture TEXT);
+
+INSERT INTO crystals VALUES (1, 'Amethyst', 2.99, 'Balance', 'Polished'); 
+INSERT INTO crystals VALUES (2, 'Turquoise', 2.99, 'Truth', 'Polished');
+INSERT INTO crystals VALUES (3, 'Citrine', 3.99, 'Abundance', 'Unpolished');
+INSERT INTO crystals VALUES (4, 'Tiger Eye', 1.99, 'Good Fortune', 'Polished');
+INSERT INTO crystals VALUES (5, 'Opal', 3.99, 'Inspiration', 'Unpolished');
+INSERT INTO crystals VALUES (6, 'Selenite', 2.99, 'Hope', 'Unpolished');
+INSERT INTO crystals VALUES (7, 'Onyx', 2.99, 'Cleansing', 'Polished');
+INSERT INTO crystals VALUES (8, 'Obesidian', 1.99, 'Protection', 'Unpolished');
+INSERT INTO crystals VALUES (9, 'Pyrite', 1.99, 'Wealth', 'Unpolished');
+INSERT INTO crystals VALUES (10, 'Bloodstone', 2.99, 'Confidence', 'Polished');
+INSERT INTO crystals VALUES (11, 'Jade', 0.99, 'Luck', 'Polished');
+INSERT INTO crystals VALUES (12, 'Topaz', 1.99, 'Forgiveness', 'Unpolished');
+INSERT INTO crystals VALUES (13, 'Moonstone', 2.99, 'Dreams', 'Unpolished');
+INSERT INTO crystals VALUES (14, 'Fluorite', 2.99, 'Balance', 'Polished');
+INSERT INTO crystals VALUES (15, 'Sunstone', 1.99, 'Happiness', 'Unpolished');
+
+--display the database order by price
+SELECT * FROM crystals 
+ORDER BY price DESC;
