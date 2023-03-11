@@ -1,0 +1,53 @@
+/* Create table about the people and what they do here */
+CREATE TABLE authors (
+    author_id INTEGER PRIMARY KEY,
+    author_name TEXT,
+    book_title TEXT,
+    series_name TEXT
+);
+
+CREATE TABLE characters (
+    character_id INTEGER PRIMARY KEY,
+    book_series TEXT,
+    character_name TEXT,
+    relationship TEXT,
+    books_appeared_in TEXT
+);
+
+INSERT INTO authors (author_id, author_name, book_title, series_name)
+VALUES
+    (1, 'Sarah J. Maas', 'A Court of Thorns and Roses', 'A Court of Thorns and Roses'),
+    (2, 'Sarah J. Maas', 'A Court of Mist and Fury', 'A Court of Thorns and Roses'),
+    (3, 'Sarah J. Maas', 'A Court of Wings and Ruin', 'A Court of Thorns and Roses'),
+    (4, 'Sarah J. Maas', 'A Court of Frost and Starlight', 'A Court of Thorns and Roses'),
+    (5, 'Sarah J. Maas', 'Throne of Glass', 'Throne of Glass'),
+    (6, 'Sarah J. Maas', 'Crown of Midnight', 'Throne of Glass'),
+    (7, 'Sarah J. Maas', 'Heir of Fire', 'Throne of Glass'),
+    (8, 'Sarah J. Maas', 'Queen of Shadows', 'Throne of Glass'),
+    (9, 'Sarah J. Maas', 'Empire of Storms', 'Throne of Glass'),
+    (10, 'Sarah J. Maas', 'Tower of Dawn', 'Throne of Glass'),
+    (11, 'Sarah J. Maas', 'Kingdom of Ash', 'Throne of Glass'),
+    (12, 'Jennifer L. Armentrout', 'From Blood and Ash', 'Blood and Ash'),
+    (13, 'Jennifer L. Armentrout', 'Kingdom of Flesh and Fire', 'Blood and Ash'),
+    (14, 'Jennifer L. Armentrout', 'Crown of Gilded Bones', 'Blood and Ash');
+
+INSERT INTO characters (character_id, book_series, character_name, relationship, books_appeared_in)
+VALUES
+    (1, 'A Court of Thorns and Roses', 'Feyre Archeron', 'Main protagonist and later High Lady of the Night Court.', 'A Court of Thorns and Roses, A Court of Mist and Fury, A Court of Wings and Ruin, A Court of Frost and Starlight'),
+    (2, 'A Court of Thorns and Roses', 'Tamlin', 'High Lord of the Spring Court and Feyres former love interest.', 'A Court of Thorns and Roses, A Court of Mist and Fury'),
+    (3, 'A Court of Thorns and Roses', 'Rhysand', 'High Lord of the Night Court and Feyres love interest.', 'A Court of Mist and Fury, A Court of Wings and Ruin, A Court of Frost and Starlight'),
+    (4, 'A Court of Thorns and Roses', 'Lucien', 'Illyrian warrior and Tamlins friend, but later allies with Feyre and Rhysand.', 'A Court of Thorns and Roses, A Court of Mist and Fury, A Court of Wings and Ruin, A Court of Frost and Starlight'),
+    (5, 'Throne of Glass', 'Celaena Sardothien', 'An assassin and the protagonist of the series.', 'Throne of Glass, Crown of Midnight, Heir of Fire, Queen of Shadows, Empire of Storms, Tower of Dawn, Kingdom of Ash'),
+    (6, 'Throne of Glass', 'Chaol Westfall', 'Captain of the Guard and Celaenas love interest in the first two books.', 'Throne of Glass, Crown of Midnight'),
+    (7, 'Throne of Glass', 'Dorian Havilliard', 'Crown Prince of Adarlan and Celaenas love interest in the first three books.', 'Throne of Glass, Crown of Midnight, Heir of Fire'),
+    (8, 'Throne of Glass', 'Aelin Ashryver Galathynius', 'Formerly Celaena Sardothien, Queen of Terrasen and the protagonist of the later books.', 'Heir of Fire, Queen of Shadows, Empire of Storms, Tower of Dawn, Kingdom of Ash'),
+    (9, 'Throne of Glass', 'Rowan Whitethorn', 'A fae prince and Aelins love interest.', 'Heir of Fire, Queen of Shadows, Empire of Storms, Tower of Dawn, Kingdom of Ash'),
+    (10, 'Blood and Ash', 'Poppy', 'Maiden and later Queen of Atlantia, and love interest of Hawke.', 'From Blood and Ash, Kingdom of Flesh and Fire, Crown of Gilded Bones'),
+    (11, 'Blood and Ash', 'Hawke', 'Hawke Flynn, Prince of Atlantia, and love interest of Poppy.', 'From Blood and Ash, Kingdom of Flesh and Fire, Crown of Gilded Bones'),
+    (12, 'Blood and Ash', 'Vikter', 'Captain of the Atlantian Guard and Poppys close friend.', 'From Blood and Ash, Kingdom of Flesh and Fire, Crown of Gilded Bones'),
+    (13, 'Blood and Ash', 'Tawny', 'Poppys handmaiden and close friend.', 'From Blood and Ash, Kingdom of Flesh and Fire, Crown of Gilded Bones');
+
+SELECT *
+FROM authors
+LEFT OUTER JOIN characters ON authors.series_name = characters.book_series;
+
